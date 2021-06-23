@@ -1,32 +1,35 @@
-# Prerequisites
-*.d
+// Project for getting the average of numbers given by users the project of the my captiain
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+#include <iostream>
+using namespace std;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+int main()
+{
+    int n, i;
+    float num[100], sum=0.0, average;
 
-# Fortran module files
-*.mod
-*.smod
+    cout << "This program is for calculating the average of 100 numbers" << endl;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    cout << "Enter the numbers of data: ";
+    cin >> n;
 
-# Executables
-*.exe
-*.out
-*.app
+    while (n>100 || n <= 0)
+    {
+        cout << "Error! number should in range of (1 to 100)." << endl;
+        cout << "Enter the number again: ";
+        cin >> n;
+    }
+
+    for(i = 0; i < n; ++i)
+    {
+        cout << i + 1 << ". Enter number: ";
+        cin >> num[i];
+        sum += num[i];
+    }
+
+    average = sum / n;
+    cout << "Average = " << average;
+
+    return 0;
+}
